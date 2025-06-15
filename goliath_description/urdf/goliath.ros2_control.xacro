@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="goliath">
+        
+
+    <ros2_control name="RobotSystem" type="system">
+
+        <xacro:property name="PI" value="3.14159265359" />
+
+        <xacro:if value="$(arg is_sim)">
+            <hardware>
+                <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+            </hardware>
+        </xacro:if>
+
+        <!-- ros2_control Real Robot -->
+        <xacro:unless value="$(arg is_sim)">
+            <hardware>
+                <plugin>micro_ros_controller/MicroRosInterface</plugin>
+            </hardware>
+        </xacro:unless>
+        
+        
+        <joint name="driving_wheel_front_left_joint">
+            <command_interface name="velocity">
+              <param name="min">-1</param>
+              <param name="max">1</param>
+            </command_interface>
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+
+        <joint name="driving_wheel_front_right_joint">
+            <command_interface name="velocity">
+              <param name="min">-1</param>
+              <param name="max">1</param>
+            </command_interface>
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+        
+        <joint name="driving_wheel_back_left_joint">
+            <command_interface name="velocity">
+              <param name="min">-1</param>
+              <param name="max">1</param>
+            </command_interface>
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+
+        <joint name="driving_wheel_back_right_joint">
+            <command_interface name="velocity">
+              <param name="min">-1</param>
+              <param name="max">1</param>
+            </command_interface>
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+
+        <joint name="joint_1">
+            <command_interface name="position">
+                <param name="min">${-pi}</param>
+                <param name="max">${pi}</param>
+            </command_interface>
+            <command_interface name="velocity"/>
+            <!-- <commmand_interface name="acceleration"/> -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <!-- <state_interface name="acceleration"/> -->
+        </joint>
+        
+        <joint name="joint_2">
+            <command_interface name="position">
+                <param name="min">${-pi/2}</param>
+                <param name="max">${pi/2}</param>
+            </command_interface>
+            <command_interface name="velocity"/>
+            <commmand_interface name="acceleration"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <!-- <state_interface name="acceleration"/> -->
+        </joint>
+        
+        <joint name="joint_3">
+            <command_interface name="position">
+                <param name="min">${-pi/1.2}</param>
+                <param name="max">${pi/1.2}</param>
+            </command_interface>
+            <command_interface name="velocity"/>
+            <!-- <commmand_interface name="acceleration"/> -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <!-- <state_interface name="acceleration"/> -->
+        </joint>
+        
+        <joint name="joint_4">
+            <command_interface name="position">
+                <param name="min">${-pi}</param>
+                <param name="max">${pi}</param>
+            </command_interface>
+            <command_interface name="velocity"/>
+            <!-- <commmand_interface name="acceleration"/> -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <!-- <state_interface name="acceleration"/> -->
+        </joint>
+        
+        <joint name="joint_5">
+            <command_interface name="position">
+                <param name="min">${-pi/1.5}</param>
+                <param name="max">${pi/1.5}</param>
+            </command_interface>
+            <command_interface name="velocity"/>
+            <!-- <commmand_interface name="acceleration"/> -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <!-- <state_interface name="acceleration"/> -->
+        </joint>
+        
+        <joint name="joint_6">
+            <command_interface name="position">
+                <param name="min">${-pi}</param>
+                <param name="max">${pi}</param>
+            </command_interface>
+            <command_interface name="velocity"/>
+            <!-- <commmand_interface name="acceleration"/> -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <!-- <state_interface name="acceleration"/> -->
+        </joint>
+
+    </ros2_control>
+</robot>
