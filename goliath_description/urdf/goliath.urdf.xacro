@@ -53,6 +53,18 @@
     <material name="blue">
         <color rgba="0 0 1 1"/>
     </material>
+    
+    <material name="alu">
+        <color rgba="0.500 0.500 0.500 1.000"/>
+    </material>
+
+    <material name="black_1">
+        <color rgba="0 0 0 1"/>
+    </material>
+
+    <material name="blue_1">
+        <color rgba="0 0 1 0.5"/>
+    </material>
 
     <!-- Define some commonly used intertial properties  -->
     <xacro:macro name="box_inertia" params="m w h d">
@@ -344,6 +356,153 @@
  	 </collision>
 	</link>
 
+    <link name="tool_base">
+    <inertial>
+        <origin xyz="0.00036492580961800734 -0.006364797616936964 0.004905590919618636" rpy="0 0 0"/>
+        <mass value="0.03336098454176251"/>
+        <inertia ixx="5e-06" iyy="7e-06" izz="1.2e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/tool_base.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="silver"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/tool_base.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+    </link>
+
+    <link name="grip_mount_1">
+    <inertial>
+        <origin xyz="-0.00034136005542522146 0.015547767390796129 0.01883273293370806" rpy="0 0 0"/>
+        <mass value="0.026038448039166225"/>
+        <inertia ixx="5e-06" iyy="4e-06" izz="5e-06" ixy="0.0" iyz="-1e-06" ixz="0.0"/>
+    </inertial>
+    <visual>
+        <origin xyz="-0.000365 0.006365 -0.008562" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/grip_mount_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="black"/>
+    </visual>
+    <collision>
+        <origin xyz="-0.000365 0.006365 -0.008562" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/grip_mount_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+    </link>
+
+    <link name="left_mount_1">
+    <inertial>
+        <origin xyz="-0.012312197013134553 0.010499353929422754 0.01616872816060999" rpy="0 0 0"/>
+        <mass value="0.005850260501194334"/>
+        <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0.022798 0.016079 -0.032689" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/left_mount_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="black"/>
+    </visual>
+    <!-- <collision>
+        <origin xyz="0.022798 0.016079 -0.032689" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/left_mount_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision> -->
+    </link>
+
+    <link name="right_mount_1">
+    <inertial>
+        <origin xyz="0.012015776314503238 0.010500460176130546 0.016402425646791258" rpy="0 0 0"/>
+        <mass value="0.005851464483284041"/>
+        <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+        <origin xyz="-0.022726 0.016079 -0.032981" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/right_mount_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="black"/>
+    </visual>
+    <!-- <collision>
+        <origin xyz="-0.022726 0.016079 -0.032981" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/right_mount_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision> -->
+    </link>
+
+    <link name="rubber_left_1">
+    <inertial>
+        <origin xyz="0.004252295929468346 4.91084999865686e-07 0.02544337370871609" rpy="0 0 0"/>
+        <mass value="0.008265327612092782"/>
+        <inertia ixx="3e-06" iyy="3e-06" izz="1e-06" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0.037938 0.005589 -0.06038" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/rubber_left_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="blue"/>
+    </visual>
+    <!-- <collision>
+        <origin xyz="0.037938 0.005589 -0.06038" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/rubber_left_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision> -->
+    </link>
+
+    <link name="rubber_right_1">
+    <inertial>
+        <origin xyz="-0.005023147767699666 4.5740402191025986e-07 0.025301746998458823" rpy="0 0 0"/>
+        <mass value="0.008265327612092756"/>
+        <inertia ixx="3e-06" iyy="3e-06" izz="1e-06" ixy="-0.0" iyz="0.0" ixz="1e-06"/>
+    </inertial>
+    <visual>
+        <origin xyz="-0.036906 0.005579 -0.061218" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/rubber_right_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="blue"/>
+    </visual>
+    <!-- <collision>
+        <origin xyz="-0.036906 0.005579 -0.061218" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/rubber_right_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision> -->
+    </link>
+
+    <link name="t_shirt_1">
+    <inertial>
+        <origin xyz="0.00012163162070136035 -0.009411539665347687 0.013485226893769523" rpy="0 0 0"/>
+        <mass value="0.0026146856075812087"/>
+        <inertia ixx="0.0" iyy="1e-06" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0.000191 0.007667 -0.022124" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/t_shirt_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="black"/>
+    </visual>
+    <collision>
+        <origin xyz="0.000191 0.007667 -0.022124" rpy="0 0 0"/>
+        <geometry>
+        <mesh filename="package://goliath_description/meshes/collision/t_shirt_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+    </link>
+
 
 
   <!-- helper macro for the arm -->
@@ -402,11 +561,19 @@
         xyz_offset="0 0 0"
         rpy_offset="0 0 0"
         mesh_package="goliath_description"
-        mesh_name="link_6"
+        mesh_name="tool_connector"
     />
 
-    <link name="ft_frame"/>
-    <link name="tool0"/>
+    <xacro:create_link
+      link_name="tool_connector"
+      xyz_offset="-0.0036 0.0053 0.0176"
+      rpy_offset="0 0 0"     
+      mesh_package="goliath_description"
+      mesh_name="tool_base"
+  />
+
+    <!-- <link name="ft_frame"/>
+    <link name="tool0"/> -->
  <!--========================================================== JOINTS ====================================================================-->
   <!-- base_joint fixes arm_base_link to the mobile base -->
     <joint name="arm_base_joint" type="fixed">
@@ -465,7 +632,7 @@
         <limit effort="1000.0" lower="${-pi}" upper="${pi}" velocity="2.5"/>
     </joint>
 
-    <joint name="joint-ft_frame" type="fixed">
+    <!-- <joint name="joint-ft_frame" type="fixed">
         <parent link="link_6"/>
         <child link="ft_frame"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -475,7 +642,7 @@
         <parent link="ft_frame"/>
         <child link="tool0"/>
         <origin xyz="0 0 0.02" rpy="0 0 0"/>
-    </joint>
+    </joint> -->
   
   
     <joint name="base_link_plate_joint" type="fixed">
@@ -545,6 +712,58 @@
     <xacro:driving_wheel suffix="back_left" reflect="1" position="-0.19"/>
     <xacro:driving_wheel suffix="back_right" reflect="-1" position="-0.19"/>
 
+<!--============================================================= END-EFFECTOR =====================================================================-->
+
+    <joint name="joint_tool_connector_frame" type="fixed">
+        <parent link="link_6"/>
+        <child link="tool_connector"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
 
 
+    <joint name="joint_connector_frame" type="fixed">
+        <parent link="tool_connector"/>
+        <child link="tool_base"/>
+        <origin xyz="-0.0038 0.005 0.017" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="Rigid_20" type="fixed">
+        <origin xyz="0.000365 -0.006365 0.008562" rpy="0 0 0"/>
+        <parent link="tool_base"/>
+        <child link="grip_mount_1"/>
+    </joint>
+
+    <joint name="slider_22" type="prismatic">
+        <origin xyz="-0.022607 -0.008412 0.010565" rpy="0 0 0"/>
+        <parent link="t_shirt_1"/>
+        <child link="left_mount_1"/>
+        <axis xyz="0.817033 -0.0 0.576591"/>
+        <limit upper="0.022" lower="-0.003" effort="100" velocity="100"/>
+    </joint>
+
+    <joint name="slider_23" type="prismatic">
+        <origin xyz="0.022917 -0.008412 0.010857" rpy="0 0 0"/>
+        <parent link="t_shirt_1"/>
+        <child link="right_mount_1"/>
+        <axis xyz="0.820609 0.0 -0.57149"/>
+        <limit upper="0.003" lower="-0.022" effort="100" velocity="100"/>
+    </joint>
+
+    <joint name="Rigid_24" type="fixed">
+        <origin xyz="-0.01514 0.01049 0.027691" rpy="0 0 0"/>
+        <parent link="left_mount_1"/>
+        <child link="rubber_left_1"/>
+    </joint>
+
+    <joint name="Rigid_25" type="fixed">
+        <origin xyz="0.01418 0.0105 0.028237" rpy="0 0 0"/>
+        <parent link="right_mount_1"/>
+        <child link="rubber_right_1"/>
+    </joint>
+
+    <joint name="Rigid_26" type="fixed">
+        <origin xyz="-0.000556 -0.001302 0.013562" rpy="0 0 0"/>
+        <parent link="grip_mount_1"/>
+        <child link="t_shirt_1"/>
+    </joint>
 </robot>
