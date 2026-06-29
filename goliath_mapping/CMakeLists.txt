@@ -15,17 +15,8 @@ find_package(geometry_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2 REQUIRED)
 
-include_directories(include)
-
-
 ament_python_install_package(${PROJECT_NAME})
 # ament_target_dependencies(rclcpp sensor_msgs tf2_ros nav_msgs geometry_msgs tf2)
-
-install(
-  DIRECTORY include
-  DESTINATION include
-)
-
 
 install(
   DIRECTORY config launch maps rviz
