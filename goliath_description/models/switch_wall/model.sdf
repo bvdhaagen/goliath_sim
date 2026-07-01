@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.9">
+<sdf version="1.7">
   <model name="switch_board_v2">
     <link name="wall_base_link">
       <inertial>
@@ -14,7 +14,7 @@
         </inertia>
       </inertial>
     </link>
-    <link name="base_wall_1">
+    <link name="base_link_1">
       <inertial>
         <pose>0.0 0.0 0.15 0.0 -0.0 0.0</pose>
         <mass>1034.3159999999998</mass>
@@ -31,9 +31,15 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>meshes/base_link_1/body1_visual.obj</uri>
+            <uri>model://switch_wall/meshes/base_link_1/body1_visual.obj</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
       <collision name="base_link_1__body1_collision">
         <pose relative_to="__model__">0.0 -7.105427357601002e-17 0.15 -0.0 -1.5707963267948966 0</pose>
@@ -62,9 +68,15 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>meshes/switch_box_v3_1/body1_visual.obj</uri>
+            <uri>model://switch_wall/meshes/switch_box_v3_1/body1_visual.obj</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
       <collision name="switch_box_v3_1__body1_collision">
         <pose relative_to="__model__">0.0 0.0 0.52 -0.0 -1.5707963267948966 0</pose>
@@ -93,9 +105,15 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>meshes/cable_way_v2_1/body1_visual.obj</uri>
+            <uri>model://switch_wall/meshes/cable_way_v2_1/body1_visual.obj</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
       <collision name="cable_way_v2_1__body1_collision">
         <pose relative_to="__model__">0.0 0.0 1.195 -0.0 -1.5707963267948966 0</pose>
@@ -124,9 +142,15 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>meshes/sw_holder_v3_1/body1_visual.obj</uri>
+            <uri>model://switch_wall/meshes/sw_holder_v3_1/body1_visual.obj</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
       <collision name="sw_holder_v3_1__body1_collision">
         <pose relative_to="__model__">-4.606699988585206e-08 -0.39445741486135383 0.5499999999332058 -0.0 -1.5707963267948966 0</pose>
@@ -138,14 +162,14 @@
       </collision>
     </link>
     <link name="switch_v2_1">
-      <pose relative_to="__model__">-4.6066999889696847e-08 -0.4333989030364562 0.5499999999332058 1.5707963267948966 -0.0 0.0</pose>
+      <pose relative_to="__model__">-4.606699988585206e-08 -0.4333989030364562 0.5499999999332058 1.5707963267948966 -8.210733189403231e-48 0.0</pose>
       <inertial>
-        <pose>0.0 -2.6070680914778675e-17 -0.007632372916423235 -1.5707963267948966 -0.0 0.0</pose>
+        <pose>4.515903253623348e-48 -2.6070680914778675e-17 -0.007632372916423235 -1.5707963267948966 5.027624059527803e-64 -8.210733189403231e-48</pose>
         <mass>1.9356070488270092</mass>
         <inertia>
           <ixx>0.011796397869155872</ixx>
           <ixy>2.6773520322626357e-19</ixy>
-          <ixz>0.0</ixz>
+          <ixz>1.3234889800848443e-23</ixz>
           <iyy>0.012336143109800468</iyy>
           <iyz>0.0</iyz>
           <izz>0.0006149153357078441</izz>
@@ -155,12 +179,18 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>meshes/switch_v2_1/body1_visual.obj</uri>
+            <uri>model://switch_wall/meshes/switch_v2_1/body1_visual.obj</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
       <collision name="switch_v2_1__body1_collision">
-        <pose relative_to="__model__">-4.6066999890292946e-08 -0.42576653012003296 0.5499999999332058 -0.0 -1.5707963267948966 0</pose>
+        <pose relative_to="__model__">-4.606699988585206e-08 -0.42576653012003296 0.5499999999332058 -0.0 -1.5707963267948966 0</pose>
         <geometry>
           <box>
             <size>0.27 0.015264745832846387 0.059826582706625685</size>
@@ -168,19 +198,1500 @@
         </geometry>
       </collision>
     </link>
-    <joint name="joint_1" type="fixed">
+    <link name="ground_block_v1_1">
+      <pose relative_to="__model__">0.62 0.0 0.0 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.15 0.0 -0.0 0.0</pose>
+        <mass>1034.3159999999998</mass>
+        <inertia>
+          <ixx>53.94164803200006</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>38.78684999999996</iyy>
+          <iyz>0.0</iyz>
+          <izz>77.21375803200004</izz>
+        </inertia>
+      </inertial>
+      <visual name="ground_block_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/ground_block_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="ground_block_v1_1__body1_collision">
+        <pose relative_to="__model__">0.62 -7.105427357601002e-17 0.15 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.7319999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="ground_block_2_v1_1">
+      <pose relative_to="__model__">1.24 0.0 0.0 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.15 0.0 -0.0 0.0</pose>
+        <mass>1034.3159999999998</mass>
+        <inertia>
+          <ixx>53.94164803200006</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>38.78684999999996</iyy>
+          <iyz>0.0</iyz>
+          <izz>77.21375803200021</izz>
+        </inertia>
+      </inertial>
+      <visual name="ground_block_2_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/ground_block_2_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="ground_block_2_v1_1__body1_collision">
+        <pose relative_to="__model__">1.24 -7.105427357601002e-17 0.15 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.7319999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="switch_comp_v1_1">
+      <pose relative_to="__model__">0.62 0.0 0.32 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>1.8298806914174293e-11 0.0001445622940893753 0.1999880844475566 0.0 -0.0 0.0</pose>
+        <mass>1397.3729842961498</mass>
+        <inertia>
+          <ixx>82.70215848443712</ixx>
+          <ixy>9.31041449492298e-09</ixy>
+          <ixz>-7.773337529215496e-10</ixz>
+          <iyy>60.575936274914625</iyy>
+          <iyz>-0.006062630345673781</iyz>
+          <izz>106.00145819698514</izz>
+        </inertia>
+      </inertial>
+      <visual name="switch_comp_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/switch_comp_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="switch_comp_v1_1__body1_collision">
+        <pose relative_to="__model__">0.62 0.0 0.52 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.4 0.7419999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="cable_way_2_v1_1">
+      <pose relative_to="__model__">0.6202410342836702 0.0 0.74 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>6.0263635193180676e-09 1.8258570214109e-05 0.45500475085737424 0.0 -0.0 0.0</pose>
+        <mass>3139.4333328013163</mass>
+        <inertia>
+          <ixx>356.90523953701904</ixx>
+          <ixy>6.907910119063887e-06</ixy>
+          <ixz>1.79743028638768e-06</ixz>
+          <iyy>310.9196176261885</iyy>
+          <iyz>0.005445820900824114</iyz>
+          <izz>234.5121603894629</izz>
+        </inertia>
+      </inertial>
+      <visual name="cable_way_2_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/cable_way_2_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="cable_way_2_v1_1__body1_collision">
+        <pose relative_to="__model__">0.6202410342836702 0.0 1.195 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.91 0.7322110055978939 0.60024103428367</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="switch_comp_2_v1_1">
+      <pose relative_to="__model__">1.24 0.0 0.32 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>1.829869589187183e-11 0.0001445622940893753 0.1999880844475566 0.0 -0.0 0.0</pose>
+        <mass>1397.3729842961498</mass>
+        <inertia>
+          <ixx>82.70215848443712</ixx>
+          <ixy>9.31041443941183e-09</ixy>
+          <ixz>-7.77504283178132e-10</ixz>
+          <iyy>60.57593627491451</iyy>
+          <iyz>-0.006062630345673781</iyz>
+          <izz>106.00145819698537</izz>
+        </inertia>
+      </inertial>
+      <visual name="switch_comp_2_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/switch_comp_2_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="switch_comp_2_v1_1__body1_collision">
+        <pose relative_to="__model__">1.24 0.0 0.52 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.4 0.7419999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="sw_holder_2_v1_1">
+      <pose relative_to="__model__">0.6199999539330001 -0.3569341572036089 0.5499999999332058 1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>-2.1738853913655376e-06 -2.6779342544867285e-08 0.028505655557729583 -1.5707963267948966 -0.0 0.0</pose>
+        <mass>2.145801491104818</mass>
+        <inertia>
+          <ixx>0.0014511918275590396</ixx>
+          <ixy>-7.151010683603687e-08</ixy>
+          <ixz>4.264339992232635e-09</ixz>
+          <iyy>0.0015299318510682003</iyy>
+          <iyz>-1.5399500008506095e-09</iyz>
+          <izz>0.001457652369696083</izz>
+        </inertia>
+      </inertial>
+      <visual name="sw_holder_2_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/sw_holder_2_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="sw_holder_2_v1_1__body1_collision">
+        <pose relative_to="__model__">0.6199999539330001 -0.39445741486135383 0.5499999999332058 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.07504651531548986 0.08</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="sw_holder_3_v1_1">
+      <pose relative_to="__model__">1.2399999539330002 -0.3569341572036089 0.5499999999332058 1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>-2.17388539147656e-06 -2.6779342544867285e-08 0.028505655557729583 -1.5707963267948966 -0.0 0.0</pose>
+        <mass>2.145801491104818</mass>
+        <inertia>
+          <ixx>0.0014511918275590396</ixx>
+          <ixy>-7.151010694705917e-08</ixy>
+          <ixz>4.264339992232635e-09</ixz>
+          <iyy>0.0015299318510675342</iyy>
+          <iyz>-1.5399500008506095e-09</iyz>
+          <izz>0.0014576523696971933</izz>
+        </inertia>
+      </inertial>
+      <visual name="sw_holder_3_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/sw_holder_3_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="sw_holder_3_v1_1__body1_collision">
+        <pose relative_to="__model__">1.2399999539330002 -0.39445741486135383 0.5499999999332058 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.07504651531548986 0.08</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="cable_way_3_v1_1">
+      <pose relative_to="__model__">1.2404820685673403 0.0 0.74 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>6.02636363034037e-09 1.8258570214109e-05 0.45500475085737424 0.0 -0.0 0.0</pose>
+        <mass>3139.4333328013163</mass>
+        <inertia>
+          <ixx>356.90523953701904</ixx>
+          <ixy>6.907910119077765e-06</ixy>
+          <ixz>1.7974298316403292e-06</ixz>
+          <iyy>310.91961762618666</iyy>
+          <iyz>0.005445820900824114</iyz>
+          <izz>234.51216038946222</izz>
+        </inertia>
+      </inertial>
+      <visual name="cable_way_3_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/cable_way_3_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="cable_way_3_v1_1__body1_collision">
+        <pose relative_to="__model__">1.2404820685673403 0.0 1.195 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.91 0.7322110055978939 0.6002410342836703</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="switch_q1_v1_1">
+      <pose relative_to="__model__">0.6199999539330001 -0.4373989030364554 0.5499999999332058 1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 -2.63156102746081e-17 -0.007632372916423235 -1.5707963267948966 -0.0 0.0</pose>
+        <mass>1.9356070488270092</mass>
+        <inertia>
+          <ixx>0.01179639786915565</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.01233614310980058</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0006149153357077886</izz>
+        </inertia>
+      </inertial>
+      <visual name="switch_q1_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/switch_q1_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="switch_q1_v1_1__body1_collision">
+        <pose relative_to="__model__">0.6199999539330001 -0.4297665301200322 0.5499999999332058 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.27 0.015264745832846387 0.059826582706625685</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="switch_q2_v1_1">
+      <pose relative_to="__model__">1.2399999539330002 -0.4373989030364554 0.5499999999332058 1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 -2.63156102746081e-17 -0.007632372916423235 -1.5707963267948966 -0.0 0.0</pose>
+        <mass>1.9356070488270092</mass>
+        <inertia>
+          <ixx>0.01179639786915565</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.012336143109799469</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0006149153357069004</izz>
+        </inertia>
+      </inertial>
+      <visual name="switch_q2_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/switch_q2_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="switch_q2_v1_1__body1_collision">
+        <pose relative_to="__model__">1.2399999539330002 -0.4297665301200322 0.5499999999332058 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.27 0.015264745832846387 0.059826582706625685</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="ground_block_3_v1_1">
+      <pose relative_to="__model__">1.86 0.0 0.0 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.15 0.0 -0.0 0.0</pose>
+        <mass>1034.3159999999998</mass>
+        <inertia>
+          <ixx>53.94164803200006</ixx>
+          <ixy>0.0</ixy>
+          <ixz>5.684341886080802e-14</ixz>
+          <iyy>38.786849999999504</iyy>
+          <iyz>0.0</iyz>
+          <izz>77.21375803199999</izz>
+        </inertia>
+      </inertial>
+      <visual name="ground_block_3_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/ground_block_3_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="ground_block_3_v1_1__body1_collision">
+        <pose relative_to="__model__">1.86 -7.105427357601002e-17 0.15 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.7319999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="cable_way_4_v1_1">
+      <pose relative_to="__model__">1.8607231028510105 0.0 0.32 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>4.123236418962506e-09 1.2492508650229117e-05 0.6649960651414899 0.0 -0.0 0.0</pose>
+        <mass>4588.475024863463</mass>
+        <inertia>
+          <ixx>881.3892005475291</ixx>
+          <ixy>6.907801075609066e-06</ixy>
+          <ixz>-2.1758023649454117e-06</ixz>
+          <iyy>814.1698457249877</iyy>
+          <iyz>-0.006592205405329184</iyz>
+          <izz>342.7582626011099</izz>
+        </inertia>
+      </inertial>
+      <visual name="cable_way_4_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/cable_way_4_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="cable_way_4_v1_1__body1_collision">
+        <pose relative_to="__model__">1.8607231028510105 0.0 0.985 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>1.33 0.7322110055978939 0.6002410342836703</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="ground_block_4_v1_1">
+      <pose relative_to="__model__">2.48 0.0 0.0 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.15 0.0 -0.0 0.0</pose>
+        <mass>1034.3159999999998</mass>
+        <inertia>
+          <ixx>53.94164803200006</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>38.78685000000041</iyy>
+          <iyz>0.0</iyz>
+          <izz>77.21375803200044</izz>
+        </inertia>
+      </inertial>
+      <visual name="ground_block_4_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/ground_block_4_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="ground_block_4_v1_1__body1_collision">
+        <pose relative_to="__model__">2.48 -7.105427357601002e-17 0.15 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.7319999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="ground_block_5_v1_1">
+      <pose relative_to="__model__">3.1 0.0 0.0 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.15 0.0 -0.0 0.0</pose>
+        <mass>1034.3159999999998</mass>
+        <inertia>
+          <ixx>53.94164803200006</ixx>
+          <ixy>0.0</ixy>
+          <ixz>-5.684341886080802e-14</ixz>
+          <iyy>38.786849999996775</iyy>
+          <iyz>0.0</iyz>
+          <izz>77.21375803199953</izz>
+        </inertia>
+      </inertial>
+      <visual name="ground_block_5_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/ground_block_5_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="ground_block_5_v1_1__body1_collision">
+        <pose relative_to="__model__">3.1 -7.105427357601002e-17 0.15 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.7319999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="ground_block_6_v1_1">
+      <pose relative_to="__model__">3.72 0.0 0.0 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.15 0.0 -0.0 0.0</pose>
+        <mass>1034.3159999999998</mass>
+        <inertia>
+          <ixx>53.94164803200006</ixx>
+          <ixy>0.0</ixy>
+          <ixz>1.1368683772161603e-13</ixz>
+          <iyy>38.786849999996775</iyy>
+          <iyz>0.0</iyz>
+          <izz>77.21375803199953</izz>
+        </inertia>
+      </inertial>
+      <visual name="ground_block_6_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/ground_block_6_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="ground_block_6_v1_1__body1_collision">
+        <pose relative_to="__model__">3.72 -7.105427357601002e-17 0.15 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.7319999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="ground_block_7_v1_1">
+      <pose relative_to="__model__">-0.62 0.0 0.0 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.15 0.0 -0.0 0.0</pose>
+        <mass>1034.3159999999998</mass>
+        <inertia>
+          <ixx>53.94164803200006</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>38.78684999999996</iyy>
+          <iyz>0.0</iyz>
+          <izz>77.21375803200004</izz>
+        </inertia>
+      </inertial>
+      <visual name="ground_block_7_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/ground_block_7_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="ground_block_7_v1_1__body1_collision">
+        <pose relative_to="__model__">-0.62 -7.105427357601002e-17 0.15 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.7319999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="cable_way_5_v1_1">
+      <pose relative_to="__model__">-0.62 0.0 0.32 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>4.123236196917901e-09 1.2492508650229117e-05 0.6649960651414899 0.0 -0.0 0.0</pose>
+        <mass>4588.475024863463</mass>
+        <inertia>
+          <ixx>881.3892005475291</ixx>
+          <ixy>6.9078010756298824e-06</ixy>
+          <ixz>-2.175801910198061e-06</ixz>
+          <iyy>814.1698457249895</iyy>
+          <iyz>-0.006592205405329184</iyz>
+          <izz>342.7582626011101</izz>
+        </inertia>
+      </inertial>
+      <visual name="cable_way_5_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/cable_way_5_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="cable_way_5_v1_1__body1_collision">
+        <pose relative_to="__model__">-0.62 0.0 0.985 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>1.33 0.7322110055978939 0.6002410342836701</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="breaker_comp_v1_1">
+      <pose relative_to="__model__">2.48 0.0 0.32 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0001650242894628562 0.03445579032418821 0.1979860522352342 0.0 -0.0 0.0</pose>
+        <mass>1188.9216912908353</mass>
+        <inertia>
+          <ixx>69.33524629439859</ixx>
+          <ixy>0.045215646684468425</ixy>
+          <ixz>-0.0026428634992043953</ixz>
+          <iyy>57.70343915412104</iyy>
+          <iyz>-0.5518093782970759</iyz>
+          <izz>93.4944340455013</izz>
+        </inertia>
+      </inertial>
+      <visual name="breaker_comp_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/breaker_comp_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="breaker_comp_v1_1__body1_collision">
+        <pose relative_to="__model__">2.48 0.0 0.52 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.4 0.7419999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="breaker_comp_2_v1_1">
+      <pose relative_to="__model__">3.1 0.0 0.32 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0001650242894628562 0.03445579032418821 0.1979860522352342 0.0 -0.0 0.0</pose>
+        <mass>1188.9216912908353</mass>
+        <inertia>
+          <ixx>69.33524629439859</ixx>
+          <ixy>0.045215646684468425</ixy>
+          <ixz>-0.0026428634989770217</ixz>
+          <iyy>57.70343915412195</iyy>
+          <iyz>-0.5518093782970759</iyz>
+          <izz>93.49443404550038</izz>
+        </inertia>
+      </inertial>
+      <visual name="breaker_comp_2_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/breaker_comp_2_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="breaker_comp_2_v1_1__body1_collision">
+        <pose relative_to="__model__">3.1 0.0 0.52 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.4 0.7419999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="breaker_comp_3_v1_1">
+      <pose relative_to="__model__">3.72 0.0 0.32 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0001650242894628562 0.03445579032418821 0.1979860522352342 0.0 -0.0 0.0</pose>
+        <mass>1188.9216912908353</mass>
+        <inertia>
+          <ixx>69.33524629439859</ixx>
+          <ixy>0.045215646684482635</ixy>
+          <ixz>-0.0026428634992043953</ixz>
+          <iyy>57.70343915411286</iyy>
+          <iyz>-0.5518093782970759</iyz>
+          <izz>93.49443404550038</izz>
+        </inertia>
+      </inertial>
+      <visual name="breaker_comp_3_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/breaker_comp_3_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="breaker_comp_3_v1_1__body1_collision">
+        <pose relative_to="__model__">3.72 0.0 0.52 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.4 0.7419999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="breaker_v2_1">
+      <pose relative_to="__model__">2.479061267774431 -0.33099999999999996 0.3983158931662166 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>-0.005854952644273048 -0.0003440108406945752 0.14464749937472215 0.0 -0.0 0.0</pose>
+        <mass>59.900001867366015</mass>
+        <inertia>
+          <ixx>0.5055088274569819</ixx>
+          <ixy>-0.0015085076311436296</ixy>
+          <ixz>-0.002435919152361521</ixz>
+          <iyy>0.6933717586918533</iyy>
+          <iyz>-6.106440754649611e-05</iyz>
+          <izz>0.333394633169803</izz>
+        </inertia>
+      </inertial>
+      <visual name="breaker_v2_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/breaker_v2_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="breaker_v2_1__body1_collision">
+        <pose relative_to="__model__">2.479061267774431 -0.33349999999999996 0.5427924482018182 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.2889531100712031 0.125 0.2338808195044618</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="breaker_2_v1_1">
+      <pose relative_to="__model__">3.0990612677744305 -0.33099999999999996 0.3983158931662166 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>-0.005854952644272604 -0.0003440108406945752 0.14464749937472215 0.0 -0.0 0.0</pose>
+        <mass>59.900001867366015</mass>
+        <inertia>
+          <ixx>0.5055088274569819</ixx>
+          <ixy>-0.0015085076311578405</ixy>
+          <ixz>-0.002435919152333099</ixz>
+          <iyy>0.6933717586916828</iyy>
+          <iyz>-6.106440754649611e-05</iyz>
+          <izz>0.33339463316974616</izz>
+        </inertia>
+      </inertial>
+      <visual name="breaker_2_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/breaker_2_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="breaker_2_v1_1__body1_collision">
+        <pose relative_to="__model__">3.0990612677744305 -0.33349999999999996 0.5427924482018182 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.2889531100712031 0.125 0.2338808195044612</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="breaker_3_v1_1">
+      <pose relative_to="__model__">3.71906126777443 -0.33099999999999996 0.3983158931662166 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>-0.005854952644272604 -0.0003440108406945752 0.14464749937472215 0.0 -0.0 0.0</pose>
+        <mass>59.900001867366015</mass>
+        <inertia>
+          <ixx>0.5055088274569819</ixx>
+          <ixy>-0.0015085076311436296</ixy>
+          <ixz>-0.002435919152333099</ixz>
+          <iyy>0.6933717586919101</iyy>
+          <iyz>-6.106440754649611e-05</iyz>
+          <izz>0.33339463316997353</izz>
+        </inertia>
+      </inertial>
+      <visual name="breaker_3_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/breaker_3_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="breaker_3_v1_1__body1_collision">
+        <pose relative_to="__model__">3.71906126777443 -0.33349999999999996 0.5427924482018182 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.2889531100712031 0.125 0.2338808195044612</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="cable_way_6_v1_1">
+      <pose relative_to="__model__">2.48 0.0 0.74 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>6.026363852384975e-09 1.8258570214109e-05 0.45500475085737424 0.0 -0.0 0.0</pose>
+        <mass>3139.4333328013163</mass>
+        <inertia>
+          <ixx>356.90523953701904</ixx>
+          <ixy>6.9079101190916425e-06</ixy>
+          <ixz>1.797430741135031e-06</ixz>
+          <iyy>310.9196176261794</iyy>
+          <iyz>0.005445820900824114</iyz>
+          <izz>234.51216038945495</izz>
+        </inertia>
+      </inertial>
+      <visual name="cable_way_6_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/cable_way_6_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="cable_way_6_v1_1__body1_collision">
+        <pose relative_to="__model__">2.48 0.0 1.195 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.91 0.7322110055978939 0.60024103428367</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="cable_way_7_v1_1">
+      <pose relative_to="__model__">3.1 0.0 0.74 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>6.026363408295765e-09 1.8258570214109e-05 0.45500475085737424 0.0 -0.0 0.0</pose>
+        <mass>3139.4333328013163</mass>
+        <inertia>
+          <ixx>356.90523953701904</ixx>
+          <ixy>6.907910119063887e-06</ixy>
+          <ixz>1.7974289221456274e-06</ixz>
+          <iyy>310.9196176261903</iyy>
+          <iyz>0.005445820900824114</iyz>
+          <izz>234.51216038946222</izz>
+        </inertia>
+      </inertial>
+      <visual name="cable_way_7_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/cable_way_7_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="cable_way_7_v1_1__body1_collision">
+        <pose relative_to="__model__">3.1 0.0 1.195 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.91 0.7322110055978939 0.6002410342836697</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="cable_way_8_v1_1">
+      <pose relative_to="__model__">3.72 0.0 0.74 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>6.026363408295765e-09 1.8258570214109e-05 0.45500475085737424 0.0 -0.0 0.0</pose>
+        <mass>3139.4333328013163</mass>
+        <inertia>
+          <ixx>356.90523953701904</ixx>
+          <ixy>6.907910119008376e-06</ixy>
+          <ixz>1.7974289221456274e-06</ixz>
+          <iyy>310.919617626183</iyy>
+          <iyz>0.005445820900824114</iyz>
+          <izz>234.5121603894586</izz>
+        </inertia>
+      </inertial>
+      <visual name="cable_way_8_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/cable_way_8_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="cable_way_8_v1_1__body1_collision">
+        <pose relative_to="__model__">3.72 0.0 1.195 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.91 0.7322110055978939 0.6002410342836697</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="on_v2_1">
+      <pose relative_to="__model__">2.46 -0.39099999999999996 0.57 -1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>-4.440892098500626e-16 -2.4248006623117592e-17 -0.005000000000000025 1.5707963267948966 -0.0 0.0</pose>
+        <mass>0.022257005853438514</mass>
+        <inertia>
+          <ixx>6.876487433447181e-07</ixx>
+          <ixy>3.469446951953614e-18</ixy>
+          <ixz>-3.469446951953614e-18</ixz>
+          <iyy>1.004347389171878e-06</iyy>
+          <iyz>-8.673617379884035e-19</iyz>
+          <izz>6.876487433915557e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="on_v2_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/on_v2_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0.3 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="on_v2_1__body1_collision">
+        <pose relative_to="__model__">2.46 -0.39599999999999996 0.57 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.018999999999999916 0.01 0.018999999999999774</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="on_2_v1_1">
+      <pose relative_to="__model__">3.08 -0.39099999999999996 0.57 -1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 -2.4248006623117592e-17 -0.005000000000000025 1.5707963267948966 -0.0 0.0</pose>
+        <mass>0.022257005853438514</mass>
+        <inertia>
+          <ixx>6.876487433447181e-07</ixx>
+          <ixy>-3.469446951953614e-18</ixy>
+          <ixz>6.938893903907228e-18</ixz>
+          <iyy>1.0043473891441224e-06</iyy>
+          <iyz>-8.673617379884035e-19</iyz>
+          <izz>6.876487433915557e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="on_2_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/on_2_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0.3 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="on_2_v1_1__body1_collision">
+        <pose relative_to="__model__">3.08 -0.39599999999999996 0.57 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.018999999999999916 0.01 0.018999999999999774</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="on_3_v1_1">
+      <pose relative_to="__model__">3.7 -0.39099999999999996 0.57 -1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>4.440892098500626e-16 -2.4248006623117592e-17 -0.005000000000000025 1.5707963267948966 -0.0 0.0</pose>
+        <mass>0.022257005853438514</mass>
+        <inertia>
+          <ixx>6.876487433447181e-07</ixx>
+          <ixy>-6.938893903907228e-18</ixy>
+          <ixz>6.938893903907228e-18</ixz>
+          <iyy>1.0043473890886112e-06</iyy>
+          <iyz>-8.673617379884035e-19</iyz>
+          <izz>6.876487432250222e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="on_3_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/on_3_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0.3 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="on_3_v1_1__body1_collision">
+        <pose relative_to="__model__">3.7 -0.39599999999999996 0.57 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.018999999999999916 0.01 0.018999999999999774</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="ground_block_8_v1_1">
+      <pose relative_to="__model__">4.34 0.0 0.0 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.15 0.0 -0.0 0.0</pose>
+        <mass>1034.3159999999998</mass>
+        <inertia>
+          <ixx>53.94164803200006</ixx>
+          <ixy>0.0</ixy>
+          <ixz>-1.1368683772161603e-13</ixz>
+          <iyy>38.786849999996775</iyy>
+          <iyz>0.0</iyz>
+          <izz>77.21375803200135</izz>
+        </inertia>
+      </inertial>
+      <visual name="ground_block_8_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/ground_block_8_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="ground_block_8_v1_1__body1_collision">
+        <pose relative_to="__model__">4.34 -7.105427357601002e-17 0.15 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.7319999999999999 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="cable_way_9_v2_1">
+      <pose relative_to="__model__">4.34 0.0 0.32 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>4.123236863051716e-09 1.2492508650229117e-05 0.6649960651414899 0.0 -0.0 0.0</pose>
+        <mass>4588.475024863463</mass>
+        <inertia>
+          <ixx>881.3892005475291</ixx>
+          <ixy>6.907801075650699e-06</ixy>
+          <ixz>-2.1757987269666046e-06</ixz>
+          <iyy>814.1698457249731</iyy>
+          <iyz>-0.006592205405329184</iyz>
+          <izz>342.758262601099</izz>
+        </inertia>
+      </inertial>
+      <visual name="cable_way_9_v2_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/cable_way_9_v2_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1</ambient>
+          <diffuse>0.75 0.75 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="cable_way_9_v2_1__body1_collision">
+        <pose relative_to="__model__">4.34 0.0 0.985 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>1.33 0.7322110055978939 0.6002410342836697</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="off_v2_1">
+      <pose relative_to="__model__">2.52 -0.39099999999999996 0.57 -1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 -2.4248006623117592e-17 -0.005000000000000025 1.5707963267948966 -0.0 0.0</pose>
+        <mass>0.022257005853438552</mass>
+        <inertia>
+          <ixx>6.876487433464529e-07</ixx>
+          <ixy>-3.469446951953614e-18</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.0043473891163668e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>6.876487433360445e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="off_v2_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/off_v2_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0.3 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="off_v2_1__body1_collision">
+        <pose relative_to="__model__">2.52 -0.39599999999999996 0.57 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.018999999999999916 0.01 0.018999999999999774</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="off_2_v1_1">
+      <pose relative_to="__model__">3.14 -0.39099999999999996 0.57 -1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 -2.4248006623117592e-17 -0.005000000000000025 1.5707963267948966 -0.0 0.0</pose>
+        <mass>0.022257005853438552</mass>
+        <inertia>
+          <ixx>6.876487433464529e-07</ixx>
+          <ixy>-3.469446951953614e-18</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.004347389171878e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>6.876487433638001e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="off_2_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/off_2_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0.3 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="off_2_v1_1__body1_collision">
+        <pose relative_to="__model__">3.14 -0.39599999999999996 0.57 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.018999999999999916 0.01 0.018999999999999774</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="off_3_v1_1">
+      <pose relative_to="__model__">3.76 -0.39099999999999996 0.57 -1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 -2.4248006623117592e-17 -0.005000000000000025 1.5707963267948966 -0.0 0.0</pose>
+        <mass>0.022257005853438552</mass>
+        <inertia>
+          <ixx>6.876487433464529e-07</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.0043473891996335e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>6.876487433915557e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="off_3_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/off_3_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0.3 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="off_3_v1_1__body1_collision">
+        <pose relative_to="__model__">3.76 -0.39599999999999996 0.57 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.018999999999999916 0.01 0.018999999999999774</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="display_1_v2_1">
+      <pose relative_to="__model__">-0.0001205055189293347 -0.36410550279894693 1.1 -1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 -2.260119362752024e-17 -0.004999999999999992 1.5707963267948966 -0.0 0.0</pose>
+        <mass>2.253478052711707</mass>
+        <inertia>
+          <ixx>0.003933549524886892</ixx>
+          <ixy>-3.6591823321385775e-19</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.011338210728723652</iyy>
+          <iyz>-2.220446049250313e-16</iyz>
+          <izz>0.007442219171383213</izz>
+        </inertia>
+      </inertial>
+      <visual name="display_1_v2_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/display_1_v2_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="display_1_v2_1__body1_collision">
+        <pose relative_to="__model__">-0.0001205055189293347 -0.36910550279894694 1.1 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.14438334943716427 0.01 0.19882297299543936</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="display_2_v1_1">
+      <pose relative_to="__model__">0.6201205287647408 -0.36410550279894693 1.1 -1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 -2.260119362752024e-17 -0.004999999999999992 1.5707963267948966 -0.0 0.0</pose>
+        <mass>2.253478052711707</mass>
+        <inertia>
+          <ixx>0.003933549524886892</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.011338210728723652</iyy>
+          <iyz>-2.220446049250313e-16</iyz>
+          <izz>0.007442219171382991</izz>
+        </inertia>
+      </inertial>
+      <visual name="display_2_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/display_2_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="display_2_v1_1__body1_collision">
+        <pose relative_to="__model__">0.6201205287647408 -0.36910550279894694 1.1 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.14438334943716427 0.01 0.19882297299543936</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="display_3_v1_1">
+      <pose relative_to="__model__">1.2403615630484108 -0.36410550279894693 1.1 -1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 -2.260119362752024e-17 -0.004999999999999992 1.5707963267948966 -0.0 0.0</pose>
+        <mass>2.253478052711707</mass>
+        <inertia>
+          <ixx>0.003933549524886892</ixx>
+          <ixy>2.220446049250313e-16</ixy>
+          <ixz>4.440892098500626e-16</ixz>
+          <iyy>0.011338210728722764</iyy>
+          <iyz>-2.220446049250313e-16</iyz>
+          <izz>0.007442219171383435</izz>
+        </inertia>
+      </inertial>
+      <visual name="display_3_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/display_3_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="display_3_v1_1__body1_collision">
+        <pose relative_to="__model__">1.2403615630484108 -0.36910550279894694 1.1 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.14438334943716427 0.01 0.1988229729954395</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="display_4_v1_1">
+      <pose relative_to="__model__">2.4798794944810707 -0.36410550279894693 1.1 -1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 -2.260119362752024e-17 -0.004999999999999992 1.5707963267948966 -0.0 0.0</pose>
+        <mass>2.253478052711707</mass>
+        <inertia>
+          <ixx>0.003933549524886892</ixx>
+          <ixy>-4.440892098500626e-16</ixy>
+          <ixz>1.7763568394002505e-15</ixz>
+          <iyy>0.0113382107287201</iyy>
+          <iyz>-2.220446049250313e-16</iyz>
+          <izz>0.0074422191713861</izz>
+        </inertia>
+      </inertial>
+      <visual name="display_4_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/display_4_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="display_4_v1_1__body1_collision">
+        <pose relative_to="__model__">2.4798794944810707 -0.36910550279894694 1.1 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.14438334943716427 0.01 0.1988229729954395</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="display_5_v1_1">
+      <pose relative_to="__model__">3.099879494481071 -0.36410550279894693 1.1 -1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 -2.260119362752024e-17 -0.004999999999999992 1.5707963267948966 -0.0 0.0</pose>
+        <mass>2.253478052711707</mass>
+        <inertia>
+          <ixx>0.003933549524886892</ixx>
+          <ixy>0.0</ixy>
+          <ixz>-8.881784197001252e-16</ixz>
+          <iyy>0.011338210728723652</iyy>
+          <iyz>-2.220446049250313e-16</iyz>
+          <izz>0.007442219171384323</izz>
+        </inertia>
+      </inertial>
+      <visual name="display_5_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/display_5_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="display_5_v1_1__body1_collision">
+        <pose relative_to="__model__">3.099879494481071 -0.36910550279894694 1.1 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.14438334943716427 0.01 0.19882297299543894</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="display_6_v1_1">
+      <pose relative_to="__model__">3.719879494481071 -0.36410550279894693 1.1 -1.5707963267948966 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 -2.260119362752024e-17 -0.004999999999999992 1.5707963267948966 -0.0 0.0</pose>
+        <mass>2.253478052711707</mass>
+        <inertia>
+          <ixx>0.003933549524886892</ixx>
+          <ixy>-4.440892098500626e-16</ixy>
+          <ixz>1.7763568394002505e-15</ixz>
+          <iyy>0.011338210728723652</iyy>
+          <iyz>-2.220446049250313e-16</iyz>
+          <izz>0.007442219171387876</izz>
+        </inertia>
+      </inertial>
+      <visual name="display_6_v1_1__body1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://switch_wall/meshes/display_6_v1_1/body1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="display_6_v1_1__body1_collision">
+        <pose relative_to="__model__">3.719879494481071 -0.36910550279894694 1.1 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.14438334943716427 0.01 0.19882297299543894</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    
+    <joint name="rigid_1" type="fixed">
       <pose relative_to="__model__">0.0 0.0 0.3 0.0 -0.0 0.0</pose>
-      <parent>base_wall_1</parent>
+      <parent>base_link_1</parent>
       <child>switch_box_v3_1</child>
       <axis/>
     </joint>
-    <joint name="joint_2" type="fixed">
+    <joint name="rigid_2" type="fixed">
       <pose relative_to="__model__">0.0 0.0 0.72 0.0 -0.0 0.0</pose>
       <parent>switch_box_v3_1</parent>
       <child>cable_way_v2_1</child>
       <axis/>
     </joint>
-    <joint name="joint3" type="revolute">
+    <joint name="revolute_3" type="revolute">
       <pose relative_to="__model__">-4.606699988585206e-08 -0.3569341572036089 0.5499999999332058 0.0 -0.0 0.0</pose>
       <parent>switch_box_v3_1</parent>
       <child>sw_holder_v3_1</child>
@@ -192,16 +1703,306 @@
         </limit>
       </axis>
     </joint>
-    <joint name="joint_5" type="fixed">
+    <joint name="rigid_5" type="fixed">
       <pose relative_to="__model__">-4.6066999889696847e-08 -0.40613415720360974 0.5499999999332058 0.0 -0.0 0.0</pose>
       <parent>sw_holder_v3_1</parent>
       <child>switch_v2_1</child>
       <axis/>
     </joint>
+    <joint name="rigid_6" type="fixed">
+      <pose relative_to="__model__">0.3 0.0 0.15 0.0 -0.0 0.0</pose>
+      <parent>base_link_1</parent>
+      <child>ground_block_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_7" type="fixed">
+      <pose relative_to="__model__">0.92 0.0 0.15 0.0 -0.0 0.0</pose>
+      <parent>ground_block_v1_1</parent>
+      <child>ground_block_2_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_8" type="fixed">
+      <pose relative_to="__model__">0.3 0.0 0.52 0.0 -0.0 0.0</pose>
+      <parent>switch_box_v3_1</parent>
+      <child>switch_comp_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_9" type="fixed">
+      <pose relative_to="__model__">0.3001205171418351 0.0 1.195 0.0 -0.0 0.0</pose>
+      <parent>cable_way_v2_1</parent>
+      <child>cable_way_2_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_10" type="fixed">
+      <pose relative_to="__model__">0.92 0.0 0.52 0.0 -0.0 0.0</pose>
+      <parent>switch_comp_v1_1</parent>
+      <child>switch_comp_2_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="revolute_11" type="revolute">
+      <pose relative_to="__model__">0.6199999539330001 -0.3569341572036089 0.5499999999332058 0.0 -0.0 0.0</pose>
+      <parent>switch_comp_v1_1</parent>
+      <child>sw_holder_2_v1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>-1.5707963267948966</lower>
+          <upper>0.0</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="revolute_12" type="revolute">
+      <pose relative_to="__model__">1.2399999539330002 -0.3569341572036089 0.5499999999332058 0.0 -0.0 0.0</pose>
+      <parent>switch_comp_2_v1_1</parent>
+      <child>sw_holder_3_v1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>-1.5707963267948966</lower>
+          <upper>0.0</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="rigid_13" type="fixed">
+      <pose relative_to="__model__">0.9203615514255051 0.0 1.195 0.0 -0.0 0.0</pose>
+      <parent>cable_way_2_v1_1</parent>
+      <child>cable_way_3_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_14" type="fixed">
+      <pose relative_to="__model__">0.6199999539330001 -0.4221341572036089 0.5499999999332058 0.0 -0.0 0.0</pose>
+      <parent>sw_holder_2_v1_1</parent>
+      <child>switch_q1_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_15" type="fixed">
+      <pose relative_to="__model__">1.2399999539330002 -0.4221341572036089 0.5499999999332058 0.0 -0.0 0.0</pose>
+      <parent>sw_holder_3_v1_1</parent>
+      <child>switch_q2_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_16" type="fixed">
+      <pose relative_to="__model__">1.54 0.0 0.15 0.0 -0.0 0.0</pose>
+      <parent>ground_block_2_v1_1</parent>
+      <child>ground_block_3_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_17" type="fixed">
+      <pose relative_to="__model__">1.5406025857091754 0.0 1.195 0.0 -0.0 0.0</pose>
+      <parent>cable_way_3_v1_1</parent>
+      <child>cable_way_4_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_18" type="fixed">
+      <pose relative_to="__model__">2.16 0.0 0.15 0.0 -0.0 0.0</pose>
+      <parent>ground_block_3_v1_1</parent>
+      <child>ground_block_4_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_19" type="fixed">
+      <pose relative_to="__model__">2.78 0.0 0.15 0.0 -0.0 0.0</pose>
+      <parent>ground_block_4_v1_1</parent>
+      <child>ground_block_5_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_20" type="fixed">
+      <pose relative_to="__model__">3.4 0.0 0.15 0.0 -0.0 0.0</pose>
+      <parent>ground_block_5_v1_1</parent>
+      <child>ground_block_6_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_21" type="fixed">
+      <pose relative_to="__model__">-0.3 0.0 0.15 0.0 -0.0 0.0</pose>
+      <parent>base_link_1</parent>
+      <child>ground_block_7_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_22" type="fixed">
+      <pose relative_to="__model__">-0.62 0.0 0.3 0.0 -0.0 0.0</pose>
+      <parent>ground_block_7_v1_1</parent>
+      <child>cable_way_5_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_23" type="fixed">
+      <pose relative_to="__model__">2.48 0.0 0.3 0.0 -0.0 0.0</pose>
+      <parent>ground_block_4_v1_1</parent>
+      <child>breaker_comp_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_24" type="fixed">
+      <pose relative_to="__model__">3.1 0.0 0.3 0.0 -0.0 0.0</pose>
+      <parent>ground_block_5_v1_1</parent>
+      <child>breaker_comp_2_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_25" type="fixed">
+      <pose relative_to="__model__">3.72 0.0 0.3 0.0 -0.0 0.0</pose>
+      <parent>ground_block_6_v1_1</parent>
+      <child>breaker_comp_3_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_26" type="fixed">
+      <pose relative_to="__model__">2.479061267774431 -0.020999999999999942 0.5427924482018182 0.0 -0.0 0.0</pose>
+      <parent>breaker_comp_v1_1</parent>
+      <child>breaker_v2_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_27" type="fixed">
+      <pose relative_to="__model__">3.0990612677744305 -0.020999999999999942 0.5427924482018182 0.0 -0.0 0.0</pose>
+      <parent>breaker_comp_2_v1_1</parent>
+      <child>breaker_2_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_28" type="fixed">
+      <pose relative_to="__model__">3.71906126777443 -0.020999999999999942 0.5427924482018182 0.0 -0.0 0.0</pose>
+      <parent>breaker_comp_3_v1_1</parent>
+      <child>breaker_3_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_29" type="fixed">
+      <pose relative_to="__model__">2.48 0.0 0.72 0.0 -0.0 0.0</pose>
+      <parent>breaker_comp_v1_1</parent>
+      <child>cable_way_6_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_30" type="fixed">
+      <pose relative_to="__model__">3.1 0.0 0.72 0.0 -0.0 0.0</pose>
+      <parent>breaker_comp_2_v1_1</parent>
+      <child>cable_way_7_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_31" type="fixed">
+      <pose relative_to="__model__">3.72 0.0 0.72 0.0 -0.0 0.0</pose>
+      <parent>breaker_comp_3_v1_1</parent>
+      <child>cable_way_8_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="slider_32" type="prismatic">
+      <pose relative_to="__model__">2.46 -0.39099999999999996 0.57 0.0 -0.0 0.0</pose>
+      <parent>breaker_v2_1</parent>
+      <child>on_v2_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0.0</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="slider_33" type="prismatic">
+      <pose relative_to="__model__">3.08 -0.39099999999999996 0.57 0.0 -0.0 0.0</pose>
+      <parent>breaker_2_v1_1</parent>
+      <child>on_2_v1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0.0</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="slider_34" type="prismatic">
+      <pose relative_to="__model__">3.7 -0.39099999999999996 0.57 0.0 -0.0 0.0</pose>
+      <parent>breaker_3_v1_1</parent>
+      <child>on_3_v1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0.0</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="rigid_35" type="fixed">
+      <pose relative_to="__model__">4.02 0.0 0.15 0.0 -0.0 0.0</pose>
+      <parent>ground_block_6_v1_1</parent>
+      <child>ground_block_8_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_36" type="fixed">
+      <pose relative_to="__model__">4.34 0.0 0.3 0.0 -0.0 0.0</pose>
+      <parent>ground_block_8_v1_1</parent>
+      <child>cable_way_9_v2_1</child>
+      <axis/>
+    </joint>
+    <joint name="slider_37" type="prismatic">
+      <pose relative_to="__model__">2.52 -0.39099999999999996 0.57 0.0 -0.0 0.0</pose>
+      <parent>breaker_v2_1</parent>
+      <child>off_v2_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0.0</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="slider_38" type="prismatic">
+      <pose relative_to="__model__">3.14 -0.39099999999999996 0.57 0.0 -0.0 0.0</pose>
+      <parent>breaker_2_v1_1</parent>
+      <child>off_2_v1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0.0</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="slider_39" type="prismatic">
+      <pose relative_to="__model__">3.76 -0.39099999999999996 0.57 0.0 -0.0 0.0</pose>
+      <parent>breaker_3_v1_1</parent>
+      <child>off_3_v1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0.0</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="rigid_40" type="fixed">
+      <pose relative_to="__model__">-0.0001205055189293347 -0.36410550279894693 1.1 0.0 -0.0 0.0</pose>
+      <parent>cable_way_v2_1</parent>
+      <child>display_1_v2_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_41" type="fixed">
+      <pose relative_to="__model__">0.6201205287647408 -0.36410550279894693 1.1 0.0 -0.0 0.0</pose>
+      <parent>cable_way_2_v1_1</parent>
+      <child>display_2_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_42" type="fixed">
+      <pose relative_to="__model__">1.2403615630484108 -0.36410550279894693 1.1 0.0 -0.0 0.0</pose>
+      <parent>cable_way_3_v1_1</parent>
+      <child>display_3_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_43" type="fixed">
+      <pose relative_to="__model__">2.4798794944810707 -0.36410550279894693 1.1 0.0 -0.0 0.0</pose>
+      <parent>cable_way_6_v1_1</parent>
+      <child>display_4_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_44" type="fixed">
+      <pose relative_to="__model__">3.099879494481071 -0.36410550279894693 1.1 0.0 -0.0 0.0</pose>
+      <parent>cable_way_7_v1_1</parent>
+      <child>display_5_v1_1</child>
+      <axis/>
+    </joint>
+    <joint name="rigid_45" type="fixed">
+      <pose relative_to="__model__">3.719879494481071 -0.36410550279894693 1.1 0.0 -0.0 0.0</pose>
+      <parent>cable_way_8_v1_1</parent>
+      <child>display_6_v1_1</child>
+      <axis/>
+    </joint>
     <joint name="base_link_joint" type="fixed">
       <parent>wall_base_link</parent>
-      <child>base_wall_1</child>
+      <child>base_link_1</child>
       <axis/>
     </joint>
   </model>
 </sdf>
+    
+
