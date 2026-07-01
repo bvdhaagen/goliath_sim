@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdf version='1.6'>
+  <world name='datacenter_world'>
+    
+    <gui>
+      <camera name='gzclient_camera'>
+        <pose>11.5 -10 12 0 0.7 1.57</pose>
+      </camera>
+    </gui>
+
+    <physics type='ode'>
+      <gravity>0 0 -9.81</gravity>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>20</iters>
+          <sor>1.0</sor>
+        </solver>
+        <constraints>
+          <cfm>0.0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>100.0</contact_max_correcting_vel>
+          <contact_surface_layer>0.0</contact_surface_layer>
+        </constraints>
+      </ode>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+    </physics>
+
+    <scene>
+      <ambient>0.6 0.6 0.6 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>false</shadows>
+      <grid>true</grid>
+      <origin_visual>true</origin_visual>
+    </scene>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <model name='datacenter_fixed_walls'>
+      <static>true</static>
+
+      <link name='back_wall'>
+        <pose>11.5 8 1.5 0 0 0</pose>
+        <collision name='collision'><geometry><box><size>23 0.2 3</size></box></geometry></collision>
+        <visual name='visual'><geometry><box><size>23 0.2 3</size></box></geometry><material><ambient>0.8 0.8 0.8 1</ambient></material></visual>
+      </link>
+
+      <link name='left_wall'>
+        <pose>0 4 1.5 0 0 0</pose>
+        <collision name='collision'><geometry><box><size>0.2 8 3</size></box></geometry></collision>
+        <visual name='visual'><geometry><box><size>0.2 8 3</size></box></geometry><material><ambient>0.8 0.8 0.8 1</ambient></material></visual>
+      </link>
+
+      <link name='right_wall'>
+        <pose>23 4 1.5 0 0 0</pose>
+        <collision name='collision'><geometry><box><size>0.2 8 3</size></box></geometry></collision>
+        <visual name='visual'><geometry><box><size>0.2 8 3</size></box></geometry><material><ambient>0.8 0.8 0.8 1</ambient></material></visual>
+      </link>
+
+      <link name='front_wall_hallway'>
+        <pose>11.5 0 1.5 0 0 0</pose>
+        <collision name='collision'><geometry><box><size>23 0.2 3</size></box></geometry></collision>
+        <visual name='visual'><geometry><box><size>23 0.2 3</size></box></geometry><material><ambient>0.8 0.8 0.8 1</ambient></material></visual>
+      </link>
+
+      <link name='inner_wall_gen_bat'>
+        <pose>6 5 1.5 0 0 0</pose>
+        <collision name='collision'><geometry><box><size>0.2 6 3</size></box></geometry></collision>
+        <visual name='visual'><geometry><box><size>0.2 6 3</size></box></geometry><material><ambient>0.7 0.7 0.7 1</ambient></material></visual>
+      </link>
+
+      <link name='inner_wall_bat_schakel'>
+        <pose>12 5 1.5 0 0 0</pose>
+        <collision name='collision'><geometry><box><size>0.2 6 3</size></box></geometry></collision>
+        <visual name='visual'><geometry><box><size>0.2 6 3</size></box></geometry><material><ambient>0.7 0.7 0.7 1</ambient></material></visual>
+      </link>
+
+      <link name='hall_wall_seg1'>
+        <pose>1.25 2 1.5 0 0 0</pose>
+        <collision name='collision'><geometry><box><size>2.5 0.2 3</size></box></geometry></collision>
+        <visual name='visual'><geometry><box><size>2.5 0.2 3</size></box></geometry><material><ambient>0.7 0.7 0.7 1</ambient></material></visual>
+      </link>
+
+      <link name='hall_wall_seg2'>
+        <pose>6.0 2 1.5 0 0 0</pose>
+        <collision name='collision'><geometry><box><size>5.0 0.2 3</size></box></geometry></collision>
+        <visual name='visual'><geometry><box><size>5.0 0.2 3</size></box></geometry><material><ambient>0.7 0.7 0.7 1</ambient></material></visual>
+      </link>
+
+      <link name='hall_wall_seg3'>
+        <pose>11.75 2 1.5 0 0 0</pose>
+        <collision name='collision'><geometry><box><size>4.5 0.2 3</size></box></geometry></collision>
+        <visual name='visual'><geometry><box><size>4.5 0.2 3</size></box></geometry><material><ambient>0.7 0.7 0.7 1</ambient></material></visual>
+      </link>
+
+      <link name='hall_wall_seg4'>
+        <pose>19.0 2 1.5 0 0 0</pose>
+        <collision name='collision'><geometry><box><size>8.0 0.2 3</size></box></geometry></collision>
+        <visual name='visual'><geometry><box><size>8.0 0.2 3</size></box></geometry><material><ambient>0.7 0.7 0.7 1</ambient></material></visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
