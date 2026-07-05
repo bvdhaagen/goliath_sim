@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: goliath_description
+    relative_path: urdf/goliath.urdf.xacro
+    xacro_args: "is_sim:=true enable_cameras:=false"
+  srdf:
+    relative_path: config/goliath.srdf
+  package_settings:
+    author_name: arham
+    author_email: bsso.cowlar@gmail.com
+    generated_timestamp: 0

@@ -95,4 +95,44 @@
       </plugin>
     </sensor>
   </gazebo>
+
+  <!-- Cameras (gated by enable_cameras). Standalone Gazebo sensors, independent
+       of ros2_control. Kept light (low res/rate) so rendering stays cheap. -->
+  <xacro:if value="$(arg enable_cameras)">
+    <!-- Gripper camera  ->  /arm_camera/image_raw -->
+    <gazebo reference="arm_camera_link">
+      <sensor type="camera" name="arm_camera">
+        <update_rate>10.0</update_rate>
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+        <camera name="arm_camera">
+          <horizontal_fov>1.0472</horizontal_fov>
+          <image><width>320</width><height>240</height><format>R8G8B8</format></image>
+          <clip><near>0.02</near><far>50.0</far></clip>
+        </camera>
+        <plugin name="arm_camera_controller" filename="libgazebo_ros_camera.so">
+          <camera_name>arm_camera</camera_name>
+          <frame_name>arm_camera_optical</frame_name>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+    <!-- Base camera  ->  /base_camera/image_raw -->
+    <gazebo reference="base_camera_link">
+      <sensor type="camera" name="base_camera">
+        <update_rate>10.0</update_rate>
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+        <camera name="base_camera">
+          <horizontal_fov>1.3962</horizontal_fov>
+          <image><width>320</width><height>240</height><format>R8G8B8</format></image>
+          <clip><near>0.05</near><far>100.0</far></clip>
+        </camera>
+        <plugin name="base_camera_controller" filename="libgazebo_ros_camera.so">
+          <camera_name>base_camera</camera_name>
+          <frame_name>base_camera_optical</frame_name>
+        </plugin>
+      </sensor>
+    </gazebo>
+  </xacro:if>
 </robot>

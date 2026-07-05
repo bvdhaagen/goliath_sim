@@ -16,6 +16,8 @@
   <exec_depend>aura_localization</exec_depend>
   <exec_depend>aura_mapping</exec_depend>
   <exec_depend>aura_moveit</exec_depend>  
+  <exec_depend>goliath_lights</exec_depend>
+  <exec_depend>goliath_doors</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

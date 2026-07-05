@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Semantic description for the Goliath 6-DOF arm.
+  Planning group "arm" = kinematic chain arm_base_link -> tool0 (joint_1..joint_6).
+  The base (mobile platform) is fixed to a "world" frame via a fixed virtual joint;
+  MoveIt plans only the arm, so navigation of the base is untouched.
+-->
+<robot name="goliath">
+
+  <!-- ===================== Planning group ===================== -->
+  <group name="arm">
+    <chain base_link="arm_base_link" tip_link="tool0"/>
+  </group>
+
+  <!-- ===================== Named poses ===================== -->
+  <group_state name="home" group="arm">
+    <joint name="joint_1" value="0"/>
+    <joint name="joint_2" value="0"/>
+    <joint name="joint_3" value="0"/>
+    <joint name="joint_4" value="0"/>
+    <joint name="joint_5" value="0"/>
+    <joint name="joint_6" value="0"/>
+  </group_state>
+
+  <group_state name="ready" group="arm">
+    <joint name="joint_1" value="0"/>
+    <joint name="joint_2" value="-0.6"/>
+    <joint name="joint_3" value="1.0"/>
+    <joint name="joint_4" value="0"/>
+    <joint name="joint_5" value="1.2"/>
+    <joint name="joint_6" value="0"/>
+  </group_state>
+
+  <!-- ===================== End effector tip ===================== -->
+  <end_effector name="tool" parent_link="tool0" group="arm"/>
+
+  <!-- ===================== Virtual joint ===================== -->
+  <!-- Root the robot in a fixed "world" frame for planning. This does NOT
+       publish TF, so it does not interfere with the odom/map tree from Nav2. -->
+  <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_footprint"/>
+
+  <!-- ===================== Disable collisions ===================== -->
+  <!-- Arm chain adjacencies -->
+  <disable_collisions link1="arm_base_link" link2="link_1" reason="Adjacent"/>
+  <disable_collisions link1="link_1" link2="link_2" reason="Adjacent"/>
+  <disable_collisions link1="link_2" link2="link_3" reason="Adjacent"/>
+  <disable_collisions link1="link_3" link2="link_4" reason="Adjacent"/>
+  <disable_collisions link1="link_4" link2="link_5" reason="Adjacent"/>
+  <disable_collisions link1="link_5" link2="link_6" reason="Adjacent"/>
+  <!-- Near-base pairs that are geometrically close but never truly collide -->
+  <disable_collisions link1="arm_base_link" link2="link_2" reason="Never"/>
+  <disable_collisions link1="link_1" link2="link_3" reason="Never"/>
+  <disable_collisions link1="link_2" link2="link_4" reason="Never"/>
+  <disable_collisions link1="link_3" link2="link_5" reason="Never"/>
+  <disable_collisions link1="link_4" link2="link_6" reason="Never"/>
+
+  <!-- Arm mount vs. mobile-base body (prevents false "start in collision") -->
+  <disable_collisions link1="arm_base_link" link2="top_cover" reason="Adjacent"/>
+  <disable_collisions link1="arm_base_link" link2="base_link" reason="Never"/>
+  <disable_collisions link1="arm_base_link" link2="front_plate" reason="Never"/>
+  <disable_collisions link1="arm_base_link" link2="rear_plate" reason="Never"/>
+  <disable_collisions link1="arm_base_link" link2="left_plate" reason="Never"/>
+  <disable_collisions link1="arm_base_link" link2="right_plate" reason="Never"/>
+  <disable_collisions link1="link_1" link2="top_cover" reason="Never"/>
+  <disable_collisions link1="link_1" link2="base_link" reason="Never"/>
+  <disable_collisions link1="link_2" link2="top_cover" reason="Never"/>
+
+</robot>

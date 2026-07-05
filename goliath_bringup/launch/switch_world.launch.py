@@ -40,6 +40,11 @@ def generate_launch_description():
         description="Absolute path to the robot xacro file",
     )
 
+    enable_cameras = LaunchConfiguration("enable_cameras")
+    enable_cameras_arg = DeclareLaunchArgument(
+        "enable_cameras", default_value="false",
+        description="Add the gripper + base cameras to the robot.")
+
     # ---------------------------------------------------------------------
     # Gazebo Classic model paden configureren
     # ---------------------------------------------------------------------
@@ -52,7 +57,8 @@ def generate_launch_description():
     # Robot description / state publisher
     # ---------------------------------------------------------------------
     robot_description = ParameterValue(
-        Command(["xacro ", LaunchConfiguration("model"), " is_sim:=true"]),
+        Command(["xacro ", LaunchConfiguration("model"),
+                 " is_sim:=true enable_cameras:=", enable_cameras]),
         value_type=str,
     )
 
@@ -148,6 +154,7 @@ def generate_launch_description():
     return LaunchDescription([
         gazebo_model_path,
         model_arg,
+        enable_cameras_arg,
         robot_state_publisher,
         start_gazebo_server,
         start_gazebo_client,

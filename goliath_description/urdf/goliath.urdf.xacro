@@ -3,6 +3,8 @@
 
     <!--==========================================================MACROS====================================================================-->
     <xacro:arg name="is_sim" default="true"/>
+    <!-- Cameras off by default; the camera launch turns them on. -->
+    <xacro:arg name="enable_cameras" default="false"/>
     <!-- <xacro:property name="pi" value="3.14159265359" /> -->
     <xacro:include filename="$(find goliath_description)/urdf/goliath.gazebo.xacro" />
     <xacro:include filename="$(find goliath_description)/urdf/goliath.ros2_control.xacro" />
@@ -545,6 +547,53 @@
     <xacro:driving_wheel suffix="back_left" reflect="1" position="-0.19"/>
     <xacro:driving_wheel suffix="back_right" reflect="-1" position="-0.19"/>
 
+    <!--========================================================== CAMERAS ====================================================================-->
+    <!-- Two cameras (gripper + base). Gated by enable_cameras. These are only
+         camera links/sensors and do NOT touch the ros2_control block. -->
+    <xacro:if value="$(arg enable_cameras)">
+      <!-- Gripper camera (on tool0) -->
+      <link name="arm_camera_link">
+          <visual>
+              <origin xyz="0 0 0" rpy="0 0 0"/>
+              <geometry><box size="0.03 0.03 0.03"/></geometry>
+              <material name="black"/>
+          </visual>
+          <xacro:default_inertial mass="0.05"/>
+      </link>
+      <!-- Pushed 12 cm out along the tool axis so the camera clears the
+           gripper geometry (was buried inside it -> black image). -->
+      <joint name="arm_camera_joint" type="fixed">
+          <origin xyz="0 0 0.12" rpy="0 ${-pi/2} 0"/>
+          <parent link="tool0"/>
+          <child link="arm_camera_link"/>
+      </joint>
+      <link name="arm_camera_optical"/>
+      <joint name="arm_camera_optical_joint" type="fixed">
+          <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+          <parent link="arm_camera_link"/>
+          <child link="arm_camera_optical"/>
+      </joint>
 
+      <!-- Base camera (front of base_link, looks forward +X) -->
+      <link name="base_camera_link">
+          <visual>
+              <origin xyz="0 0 0" rpy="0 0 0"/>
+              <geometry><box size="0.03 0.08 0.03"/></geometry>
+              <material name="black"/>
+          </visual>
+          <xacro:default_inertial mass="0.05"/>
+      </link>
+      <joint name="base_camera_joint" type="fixed">
+          <origin xyz="0.35 0 0.20" rpy="0 0 0"/>
+          <parent link="base_link"/>
+          <child link="base_camera_link"/>
+      </joint>
+      <link name="base_camera_optical"/>
+      <joint name="base_camera_optical_joint" type="fixed">
+          <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+          <parent link="base_camera_link"/>
+          <child link="base_camera_optical"/>
+      </joint>
+    </xacro:if>
 
 </robot>
