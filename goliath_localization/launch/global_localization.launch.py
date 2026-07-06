@@ -15,7 +15,7 @@ def generate_launch_description():
 
     map_name_arg = DeclareLaunchArgument(
         "map_name",
-        default_value="small_house"
+        default_value="datacenter"
     )
 
     use_sim_time_arg = DeclareLaunchArgument(
