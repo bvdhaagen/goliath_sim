@@ -58,6 +58,16 @@
         </visual>
       </link>
     </model>
+    
+    <include>
+      <uri>model://battery_rack</uri>
+      <pose>9.0 5.0 0.0 0 0 0</pose>
+    </include>
+    
+    <include>
+      <uri>model://switch_wall</uri>
+      <pose>16.5 7.0 0.0 0 0 0</pose>
+    </include>
 
     <light name='led_gang_1' type='point'><pose>3.0 1.0 2.75 0 0 0</pose><diffuse>0.9 0.9 1.0 1</diffuse><attenuation><range>8</range><constant>0.5</constant></attenuation></light>
     <light name='led_gang_2' type='point'><pose>9.0 1.0 2.75 0 0 0</pose><diffuse>0.9 0.9 1.0 1</diffuse><attenuation><range>8</range><constant>0.5</constant></attenuation></light>
@@ -231,5 +241,12 @@
       </link>
 
     </model>
+
+    <!-- Enables /get_entity_state + /set_entity_state, used by the auto-door
+         node to read the robot's position and slide the doors open/closed. -->
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <update_rate>30.0</update_rate>
+    </plugin>
+
   </world>
 </sdf>
