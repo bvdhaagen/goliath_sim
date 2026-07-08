@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<sdf version='1.6'>
+  <model name='battery_rack'>
+    <static>true</static>
+
+    <link name='switch_box'>
+      <pose>0 2 0.90 0 0 1.5775</pose> <collision name='collision'>
+        <geometry><box><size>1.0 1.0 1.8</size></box></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><box><size>1.0 1.0 1.8</size></box></geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient> <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name='battery_layer_1'>
+      <pose>2.2 0.41 0.275 0 0 1.5775</pose> <collision name='collision'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+        <material>
+          <ambient>0.1 0.25 0.4 1</ambient> <diffuse>0.1 0.25 0.4 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name='battery_layer_2'>
+      <pose>2.2 0.41 0.675 0 0 1.5775</pose>
+      <collision name='collision'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+        <material>
+          <ambient>0.1 0.25 0.4 1</ambient>
+          <diffuse>0.1 0.25 0.4 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name='battery_layer_3'>
+      <pose>2.2 0.41 1.075 0 0 1.5775</pose>
+      <collision name='collision'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+        <material>
+          <ambient>0.1 0.25 0.4 1</ambient>
+          <diffuse>0.1 0.25 0.4 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name='battery_layer_4'>
+      <pose>2.2 0.41 1.475 0 0 1.5775</pose>
+      <collision name='collision'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+        <material>
+          <ambient>0.1 0.25 0.4 1</ambient>
+          <diffuse>0.1 0.25 0.4 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+    </link>
+
+
+    <link name='battery_layer_5'>
+      <pose>-2.2 0.41 0.275 0 0 1.5775</pose> <collision name='collision'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+        <material>
+          <ambient>0.1 0.25 0.4 1</ambient> <diffuse>0.1 0.25 0.4 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name='battery_layer_6'>
+      <pose>-2.2 0.41 0.675 0 0 1.5775</pose>
+      <collision name='collision'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+        <material>
+          <ambient>0.1 0.25 0.4 1</ambient>
+          <diffuse>0.1 0.25 0.4 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name='battery_layer_7'>
+      <pose>-2.2 0.41 1.075 0 0 1.5775</pose>
+      <collision name='collision'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+        <material>
+          <ambient>0.1 0.25 0.4 1</ambient>
+          <diffuse>0.1 0.25 0.4 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name='battery_layer_8'>
+      <pose>-2.2 0.41 1.475 0 0 1.5775</pose>
+      <collision name='collision'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><box><size>4.9 0.82 0.25</size></box></geometry>
+        <material>
+          <ambient>0.1 0.25 0.4 1</ambient>
+          <diffuse>0.1 0.25 0.4 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
