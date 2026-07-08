@@ -1,0 +1,23 @@
+# Automatic sliding doors for the datacenter world.
+#
+# closed : [x, y, z] world position of the door when shut (centre of the opening)
+# size   : [x, y, z] panel size (fills the opening; full wall height 3.0)
+# slide  : [dx, dy, dz] offset added to `closed` for the fully-open pose
+
+robot_model: goliath      # gazebo model name of the robot
+open_distance: 2.0        # m: robot closer than this -> door opens
+close_distance: 1.5       # m: robot farther than this -> door closes (hysteresis)
+slide_speed: 2.5          # m/s slide animation speed
+rate: 30.0                # Hz update rate
+color: [0.25, 0.35, 0.55] # door colour (r g b)
+
+doors:
+  # --- top hall wall (y=2): into the tech rooms ---
+  door_gen:      {closed: [3.0, 2.0, 1.5],  size: [1.35, 0.18, 2.99], slide: [1.4, 0.0, 0.0]}
+  door_bat:      {closed: [9.0, 2.0, 1.5],  size: [1.35, 0.18, 2.99], slide: [1.4, 0.0, 0.0]}
+  door_schakel:  {closed: [14.5, 2.0, 1.5], size: [1.35, 0.18, 2.99], slide: [1.4, 0.0, 0.0]}
+  # --- bottom hall wall (y=0): into the data hall ---
+  door_data1:    {closed: [3.0, 0.0, 1.5],  size: [1.35, 0.18, 2.99], slide: [1.4, 0.0, 0.0]}
+  door_data2:    {closed: [9.0, 0.0, 1.5],  size: [1.35, 0.18, 2.99], slide: [1.4, 0.0, 0.0]}
+  # --- left wall (x=0): corridor entrance ---
+  door_entrance: {closed: [0.0, 1.0, 1.5],  size: [0.18, 1.9, 2.99], slide: [0.0, 1.9, 0.0]}

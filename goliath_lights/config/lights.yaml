@@ -1,0 +1,28 @@
+# Switchroom status lights.
+#
+# One light per switch, placed on the DISPLAY above that switch. Light positions
+# are RELATIVE to the switch_wall model origin; the node adds `wall_pose` (where
+# the wall is spawned). If you move the wall in the launch, update wall_pose.
+#
+# Two switch types:
+#   lever  - one revolute joint. Pushed down (|angle| > on_above rad) and stopped
+#            -> ON (green); back up (|angle| < off_below) and stopped -> OFF (red).
+#   button - a push switch with an ON slider and an OFF slider. Pressing the ON
+#            button latches GREEN; pressing the OFF button latches RED.
+
+joint_topic: /switch_wall/joint_states
+wall_pose: [16.5, 7.0, 0.0]   # where switch_wall is spawned (switch_world.launch.py)
+size: [0.14, 0.04, 0.11]      # light box size (m)
+stop_velocity: 0.05           # |velocity| below this = "stopped" (levers)
+
+switches:
+  # ---- left: levers (below displays 1-3) ----
+  switch_1: {light: [0.00, -0.42, 1.10], type: lever, joint: revolute_3,  on_above: 1.2, off_below: 0.15}
+  switch_2: {light: [0.62, -0.42, 1.10], type: lever, joint: revolute_11, on_above: 1.2, off_below: 0.15}
+  switch_3: {light: [1.24, -0.42, 1.10], type: lever, joint: revolute_12, on_above: 1.2, off_below: 0.15}
+  # ---- right: push switches (below displays 4-6) ----
+  switch_4: {light: [2.48, -0.42, 1.10], type: button, on_joint: slider_32, off_joint: slider_37, press: 0.005}
+  switch_5: {light: [3.10, -0.42, 1.10], type: button, on_joint: slider_33, off_joint: slider_38, press: 0.005}
+  switch_6: {light: [3.72, -0.42, 1.10], type: button, on_joint: slider_34, off_joint: slider_39, press: 0.005}
+
+start_on: false               # all lights start red (power off)
