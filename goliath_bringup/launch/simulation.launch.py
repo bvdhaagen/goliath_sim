@@ -9,6 +9,27 @@ from ament_index_python.packages import get_package_share_directory
 
 
 def generate_launch_description():
+    lights = get_package_share_directory('goliath_lights')
+    doors = get_package_share_directory('goliath_doors')
+    
+    status_lights = IncludeLaunchDescription(
+        
+            os.path.join(lights, 'launch', 'status_lights.launch.py'))
+
+    auto_doors = IncludeLaunchDescription(
+  
+            os.path.join(doors, 'launch', 'auto_doors.launch.py'))
+
+    # teleop publishes /cmd_vel; the diff-drive controller listens on
+    # /amr_controller/cmd_vel_unstamped. Forward one to the other.
+    cmd_vel_relay = Node(
+        package='topic_tools',
+        executable='relay',
+        name='cmd_vel_relay',
+        arguments=['/cmd_vel', '/amr_controller/cmd_vel_unstamped'],
+        output='screen',
+    )    
+
     use_slam = LaunchConfiguration("use_slam")
 
     use_slam_arg = DeclareLaunchArgument(
@@ -22,6 +43,7 @@ def generate_launch_description():
             "launch",
             "gazebo.launch.py"
         ),
+        
     )
     
     controller = IncludeLaunchDescription(
@@ -109,7 +131,7 @@ def generate_launch_description():
         os.path.join(
             get_package_share_directory("goliath_moveit"),
             "launch",
-            "moveit.launch.py"
+            "demo.launch.py"
         ),
     )
 
@@ -123,7 +145,11 @@ def generate_launch_description():
         localization,
         #slam,
         navigation,
+        status_lights, 
+        auto_doors, 
+        cmd_vel_relay,
         #rviz_slam,
+        #moveit        
         rviz
-        #moveit
+        
     ])
